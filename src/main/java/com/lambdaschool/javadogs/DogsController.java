@@ -55,12 +55,7 @@ public class DogsController {
 
     @GetMapping("/breeds/{breed}")
     public Resources<Resource<Dog>> getBreed(@PathVariable String breed) {
-        ArrayList<Dog> dogList = new ArrayList<>();
-        for (Dog dog : dogsRepo.findAll()) {
-            if (dog.getBreed().toLowerCase().equals(breed.toLowerCase())) {
-                dogList.add(dog);
-            }
-        }
+        List<Dog> dogList = dogsRepo.findByBreedIgnoreCase(breed.toLowerCase());
         List<Resource<Dog>> dogs = dogList.stream()
                 .map(assembler::toResource)
                 .collect(Collectors.toList());
@@ -69,12 +64,7 @@ public class DogsController {
 
     @GetMapping("/breeds/apartment")
     public Resources<Resource<Dog>> getApartmentDogs() {
-        ArrayList<Dog> dogList = new ArrayList<>();
-        for (Dog dog : dogsRepo.findAll()) {
-            if (dog.isApartmentOK()) {
-                dogList.add(dog);
-            }
-        }
+        List<Dog> dogList = dogsRepo.findByApartmentOK(true);
         List<Resource<Dog>> dogs = dogList.stream()
                 .map(assembler::toResource)
                 .collect(Collectors.toList());
@@ -123,10 +113,8 @@ public class DogsController {
 
     @DeleteMapping("breeds/{breed}")
     public ResponseEntity<?> deleteBreed(@PathVariable String breed) {
-        for (Dog dog : dogsRepo.findAll()) {
-            if (dog.getBreed().toLowerCase().equals(breed.toLowerCase())) {
+        for (Dog dog : dogsRepo.findByBreedIgnoreCase(breed)) {
                 dogsRepo.delete(dog);
-            }
         }
         return ResponseEntity.noContent().build();
     }
