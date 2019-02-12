@@ -1,3 +1,14 @@
+POST http://localhost:8080/dogs
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"breed":"Spaniel","weight":45,"apartmentOK":true}
+
+<> 2019-02-12T024535.201.json
+
+###
+
 PUT http://localhost:8080/dogs/1
 Accept: */*
 Cache-Control: no-cache

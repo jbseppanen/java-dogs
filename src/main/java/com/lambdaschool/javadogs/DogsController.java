@@ -104,4 +104,15 @@ public class DogsController {
                 .body(resource);
     }
 
+    @PostMapping()
+    public ResponseEntity<?>addDog(@RequestBody Dog newDog) throws URISyntaxException {
+        Dog dogToAdd = new Dog(newDog.getBreed(), newDog.weight, newDog.isApartmentOK());
+        dogsRepo.save(dogToAdd);
+
+        Resource<Dog> resource = assembler.toResource(dogToAdd);
+        return ResponseEntity
+                .created(new URI(resource.getId().expand().getHref()))
+                .body(resource);
+    }
+
 }
