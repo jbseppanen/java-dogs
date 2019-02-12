@@ -28,15 +28,16 @@ public class DogsController {
 
     @GetMapping("/breeds")
     public Resources<Resource<Dog>> all() {
-        List<Resource<Dog>> dogs = dogsRepo.findAll().stream()
+        List<Dog> dogList = dogsRepo.findAll();
+        dogList.sort((e1, e2) -> e1.getBreed().compareToIgnoreCase(e2.getBreed()));
+        List<Resource<Dog>> dogs = dogList.stream()
                 .map(assembler::toResource)
                 .collect(Collectors.toList());
         return new Resources<>(dogs, linkTo(methodOn(DogsController.class).all()).withSelfRel());
     }
 
     @GetMapping("/{id}")
-    public Resource<Dog> findOne(@PathVariable Long id)
-    {
+    public Resource<Dog> findOne(@PathVariable Long id) {
         Dog dog = dogsRepo.findById(id)
                 .orElseThrow(() -> new DogNotFoundException(id));
 
