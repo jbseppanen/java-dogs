@@ -82,7 +82,7 @@ public class DogsController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?>UpdateDog(@RequestBody Dog newDog, @PathVariable Long id)
+    public ResponseEntity<?> UpdateDog(@RequestBody Dog newDog, @PathVariable Long id)
             throws URISyntaxException {
 
         Dog dogToUpdate = dogsRepo.findById(id)
@@ -105,7 +105,7 @@ public class DogsController {
     }
 
     @PostMapping()
-    public ResponseEntity<?>addDog(@RequestBody Dog newDog) throws URISyntaxException {
+    public ResponseEntity<?> addDog(@RequestBody Dog newDog) throws URISyntaxException {
         Dog dogToAdd = new Dog(newDog.getBreed(), newDog.weight, newDog.isApartmentOK());
         dogsRepo.save(dogToAdd);
 
@@ -118,6 +118,16 @@ public class DogsController {
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteDog(@PathVariable Long id) {
         dogsRepo.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @DeleteMapping("breeds/{breed}")
+    public ResponseEntity<?> deleteBreed(@PathVariable String breed) {
+        for (Dog dog : dogsRepo.findAll()) {
+            if (dog.getBreed().toLowerCase().equals(breed.toLowerCase())) {
+                dogsRepo.delete(dog);
+            }
+        }
         return ResponseEntity.noContent().build();
     }
 }

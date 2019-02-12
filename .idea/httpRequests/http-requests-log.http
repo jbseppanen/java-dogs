@@ -1,3 +1,34 @@
+DELETE http://localhost:8080/dogs/beagle
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"breed":"Spaniel","weight":45,"apartmentOK":true}
+
+<> 2019-02-12T025831.500.json
+
+###
+
+DELETE http://localhost:8080/dogs/breeds/beagle
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"breed":"Spaniel","weight":45,"apartmentOK":true}
+
+###
+
+DELETE http://localhost:8080/dogs/beagle
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"breed":"Spaniel","weight":45,"apartmentOK":true}
+
+<> 2019-02-12T025357.500.json
+
+###
+
 GET http://localhost:8080/dogs/1
 Accept: */*
 Cache-Control: no-cache
