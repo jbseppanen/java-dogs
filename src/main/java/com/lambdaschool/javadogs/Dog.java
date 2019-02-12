@@ -8,20 +8,20 @@ import javax.persistence.Id;
 
 @Data //Creates getters, setters, toString
 @Entity //Object ready for JPA storage
-public class Dogs {
+public class Dog {
     private @Id @GeneratedValue Long id;
     String breed;
     int weight;
     boolean apartmentOK;
 
 
-    public Dogs(String breed, int weight, boolean apartmentOK) {
+    public Dog(String breed, int weight, boolean apartmentOK) {
         this.breed = breed;
         this.weight = weight;
         this.apartmentOK = apartmentOK;
     }
 
-    public Dogs() {
+    public Dog() {
     }
 
 }
