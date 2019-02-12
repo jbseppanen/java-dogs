@@ -21,7 +21,7 @@ Expose the following endpoints
 
 /dogs/breeds -> returns a listing of all dogs ordered by breed   
 /dogs/weight -> returns a listing of all dogs ordered by average weight  
-/dogs/{breed} -> returns dogs of just that breed  
+/dogs/breeds/{breed} -> returns dogs of just that breed  
 /dogs/apartment -> returns dogs suitable for apartments    
 
 ### Put
