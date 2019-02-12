@@ -1,0 +1,14 @@
+{
+  "id": 1,
+  "breed": "Springer",
+  "weight": 85,
+  "apartmentOK": false,
+  "_links": {
+    "self": {
+      "href": "http://localhost:8080/dogs/1"
+    },
+    "dogs": {
+      "href": "http://localhost:8080/dogs/breeds"
+    }
+  }
+}

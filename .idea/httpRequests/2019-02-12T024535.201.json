@@ -1,0 +1,14 @@
+{
+  "id": 106,
+  "breed": "Spaniel",
+  "weight": 45,
+  "apartmentOK": true,
+  "_links": {
+    "self": {
+      "href": "http://localhost:8080/dogs/106"
+    },
+    "dogs": {
+      "href": "http://localhost:8080/dogs/breeds"
+    }
+  }
+}
