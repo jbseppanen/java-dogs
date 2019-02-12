@@ -1,0 +1,144 @@
+PUT http://localhost:8080/dogs/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"breed":"Springer","weight":85,"apartmentOK":false}
+
+<> 2019-02-12T023417.201.json
+
+###
+
+PUT http://localhost:8080/dogs/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: json
+
+{"breed":"Springer","weight":85,"apartmentOK":false}
+
+<> 2019-02-12T023402.415.json
+
+###
+
+PUT http://localhost:8080/dogs/1
+Accept: */*
+Cache-Control: no-cache
+
+{"breed":"Springer","weight":85,"apartmentOK":false}
+
+<> 2019-02-12T023306.415.json
+
+###
+
+GET http://localhost:8080/dogs/1
+Accept: */*
+Cache-Control: no-cache
+
+{"breed":"Springer","weight":75,"apartmentOK":false}
+
+<> 2019-02-12T023229.200.json
+
+###
+
+PUT http://localhost:8080/dogs/1
+Accept: */*
+Cache-Control: no-cache
+
+{"breed":"Springer","weight":75,"apartmentOK":false}
+
+<> 2019-02-12T022406.415.json
+
+###
+
+PUT http://localhost:8080/dogs/1
+Accept: */*
+Cache-Control: no-cache
+
+{"breed":"Springer","weight":75,"apartmentOK":false}
+
+<> 2019-02-12T022354.415.json
+
+###
+
+PUT http://localhost:8080/dogs/1
+Accept: */*
+Cache-Control: no-cache
+
+{"breed":"Springer","weight":75,"apartmentOK":false}
+
+<> 2019-02-12T022321.415.json
+
+###
+
+GET http://localhost:8080/dogs/1
+Accept: */*
+Cache-Control: no-cache
+
+{"breed":"Springer","weight":75,"apartmentOK":false}
+
+<> 2019-02-12T022315.200.json
+
+###
+
+PUT http://localhost:8080/dogs/1
+Accept: */*
+Cache-Control: no-cache
+
+{"breed":"Springer","weight":75,"apartmentOK":false}
+
+<> 2019-02-12T022218.415.json
+
+###
+
+PUT http://localhost:8080/dogs/1
+Accept: */*
+Cache-Control: no-cache
+
+{"id":1,"breed":"Springer","weight":75,"apartmentOK":false}
+
+<> 2019-02-12T021710.415.json
+
+###
+
+PUT http://localhost:8080/dogs/1
+Accept: */*
+Cache-Control: no-cache
+
+{"id":1,"breed":"Springer","weight":75,"apartmentOK":false}
+
+<> 2019-02-12T021616.405.json
+
+###
+
+GET http://localhost:8080/dogs/1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-12T021431.200.json
+
+###
+
+GET http://localhost:8080/dogs/5
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-12T021407.200.json
+
+###
+
+GET http://localhost:8080/dogs/breeds
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-12T021330.200.json
+
+###
+
+GET http://localhost:8080/breeds
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-12T021212.404.json
+
+###
+
